@@ -2,13 +2,16 @@
 
 menu:
   主页: /
-  随笔: /tags/随笔/
+  随笔: /tags/随笔
+
+#"https://weibo.com/u/3124855695"
+#https://www.zhihu.com/people/ning-wen-chao/activities
 
 # SubNav
 subnav:
   github: "#"
-  weibo: "#"
-  rss: "#"
+  weibo: "https://weibo.com/u/3124855695"
+#  rss: "#"
   zhihu: "#"
   #qq: "#"
   #weixin: "#"
@@ -17,7 +20,7 @@ subnav:
   #segmentfault: "#"
   #bilibili: "#"
   #acfun: "#"
-  #mail: "mailto:litten225@qq.com"
+  mail: "#"
   #facebook: "#"
   #google: "#"
   #twitter: "#"
@@ -59,7 +62,7 @@ google_analytics: ''
 favicon: /favicon.png
 
 #你的头像url
-avatar: img/logo.jpeg
+avatar: /img/logo.jpeg
 
 #是否开启分享
 share_jia: true
@@ -71,7 +74,7 @@ share_jia: true
 duoshuo: false
 
 #2、网易云跟帖
-wangyiyun: false
+wangyiyun: 753d3fa98c61423fa4eaa0931546c754
 
 #3、畅言
 changyan_appid: false
@@ -103,11 +106,6 @@ smart_menu:
   aboutme: '关于我'
 
 friends:
-  友情链接1: http://localhost:4000/
-  友情链接2: http://localhost:4000/
-  友情链接3: http://localhost:4000/
-  友情链接4: http://localhost:4000/
-  友情链接5: http://localhost:4000/
-  友情链接6: http://localhost:4000/
+  微博: https://weibo.com/u/3124855695
 
-aboutme: 很惭愧<br><br>只做了一点微小的工作<br>谢谢大家
+aboutme: 苦逼90后程序员一枚
