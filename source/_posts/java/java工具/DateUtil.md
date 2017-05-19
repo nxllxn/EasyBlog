@@ -408,44 +408,46 @@ tags:
 
 #### 测试
 
+        DateTool dateTool = DateToolImpl.getSingleInstance();
         @Test
         @SuppressWarnings("unchecked")
         public void testIntelligentParse(){
-            assertEquals("Thu Feb 02 00:00:00 CST 2012",DateUtil.parse("20120202").toString());
-            assertEquals("Thu Feb 02 00:00:00 CST 2012",DateUtil.parse("2012-02-02").toString());
-            assertEquals("Thu Feb 02 00:00:00 CST 2012",DateUtil.parse("2012-02-2").toString());
-            assertEquals("Thu Feb 02 00:00:00 CST 2012",DateUtil.parse("2012年2月2日").toString());
+            assertEquals("Thu Feb 02 00:00:00 CST 2012",dateTool.parse("20120202").toString());
+            assertEquals("Thu Feb 02 00:00:00 CST 2012",dateTool.parse("2012-02-02").toString());
+            assertEquals("Thu Feb 02 00:00:00 CST 2012",dateTool.parse("2012-02-2").toString());
+            assertEquals("Thu Feb 02 00:00:00 CST 2012",dateTool.parse("2012年2月2日").toString());
     
-            assertEquals("Thu Feb 02 01:01:01 CST 2012",DateUtil.parse("2012-02-02 01:01:01").toString());
-            assertEquals("Thu Feb 02 00:00:00 CST 2012",DateUtil.parse("2012/02/02").toString());
-            assertEquals("Thu Feb 02 00:00:00 CST 2012",DateUtil.parse("2012-02-02").toString());
-            assertEquals("Thu Jan 01 20:12:02 CST 1970",DateUtil.parse("201202").toString());
+            assertEquals("Thu Feb 02 01:01:01 CST 2012",dateTool.parse("2012-02-02 01:01:01").toString());
+            assertEquals("Thu Feb 02 00:00:00 CST 2012",dateTool.parse("2012/02/02").toString());
+            assertEquals("Thu Feb 02 00:00:00 CST 2012",dateTool.parse("2012-02-02").toString());
+            assertEquals("Thu Jan 01 20:12:02 CST 1970",dateTool.parse("201202").toString());
     
-            assertEquals("Sun Jan 01 00:00:00 CST 2012",DateUtil.parse("2012").toString());
-            assertEquals("Sun Jan 01 00:00:00 CST 2012",DateUtil.parse("2012年").toString());
-            assertEquals("Wed Feb 01 00:00:00 CST 2012",DateUtil.parse("2012年02月").toString());
-            assertEquals("Wed Feb 01 00:00:00 CST 2012",DateUtil.parse("2012.02.01").toString());
+            assertEquals("Sun Jan 01 00:00:00 CST 2012",dateTool.parse("2012").toString());
+            assertEquals("Sun Jan 01 00:00:00 CST 2012",dateTool.parse("2012年").toString());
+            assertEquals("Wed Feb 01 00:00:00 CST 2012",dateTool.parse("2012年02月").toString());
+            assertEquals("Wed Feb 01 00:00:00 CST 2012",dateTool.parse("2012.02.01").toString());
     
-            assertEquals("Wed Feb 01 00:00:00 CST 2012",DateUtil.parse("2012.02").toString());
-            assertEquals("Thu Jan 01 11:11:11 CST 1970",DateUtil.parse("11:11:11").toString());
-            assertEquals("Thu Jan 01 01:01:01 CST 1970",DateUtil.parse("1:1:1").toString());
-            assertEquals("Thu Jan 01 01:01:01 CST 1970",DateUtil.parse("01:01:01").toString());
+            assertEquals("Wed Feb 01 00:00:00 CST 2012",dateTool.parse("2012.02").toString());
+            assertEquals("Thu Jan 01 11:11:11 CST 1970",dateTool.parse("11:11:11").toString());
+            assertEquals("Thu Jan 01 01:01:01 CST 1970",dateTool.parse("1:1:1").toString());
+            assertEquals("Thu Jan 01 01:01:01 CST 1970",dateTool.parse("01:01:01").toString());
     
-            assertEquals("Thu Jan 01 11:11:00 CST 1970",DateUtil.parse("11:11").toString());
-            assertEquals("Thu Jan 01 11:00:00 CST 1970",DateUtil.parse("11").toString());
+            assertEquals("Thu Jan 01 11:11:00 CST 1970",dateTool.parse("11:11").toString());
+            assertEquals("Thu Jan 01 11:00:00 CST 1970",dateTool.parse("11").toString());
         }
         
         结果：上面的单元测试都可以通过
         
         //测试多线程
         public static void main(String[] args) {
+            DateTool dateTool = DateToolImpl.getSingleInstance();
             for (int index = 0;index < 10;index ++){
                 new Thread(() -> {
                     String currentThreadName = Thread.currentThread().getName();
     
-                    System.out.println(currentThreadName + " " + DateUtil.parse("20120202"));
-                    System.out.println(currentThreadName + " " + DateUtil.parse("11:11:11"));
-                    System.out.println(currentThreadName + " " + DateUtil.parse("2012年02月02日 11:11:11"));
+                    System.out.println(currentThreadName + " " + dateTool.parse("20120202"));
+                    System.out.println(currentThreadName + " " + dateTool.parse("11:11:11"));
+                    System.out.println(currentThreadName + " " + dateTool.parse("2012年02月02日 11:11:11"));
                 }).start();
             }
         }
