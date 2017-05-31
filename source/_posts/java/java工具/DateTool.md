@@ -480,3 +480,7 @@ tags:
 
 #### 结语
 只是一个小demo，代码写的不好，有什么问题恳请批评指正，感激涕零！此外，请轻喷！
+
+
+#### 参考资料
+[深入理解Java：SimpleDateFormat安全的时间格式化](http://www.cnblogs.com/peida/archive/2013/05/31/3070790.html)
