@@ -413,14 +413,7 @@ JSON（JavaScript Object Notation）,是一种被广泛使用的后端数据处�
                 return Optional.empty();
             }
     
-            BiFunction<JSONObject,String,Optional<Object>> optFunction =
-                    (x,y) -> Stream.of(x.entrySet())
-                            .flatMap(Collection::stream)
-                            .filter(z -> ((Map.Entry)z).getKey().equals(y))
-                            .map(z -> ((Map.Entry)z).getValue())
-                            .findAny();
-    
-            return optFunction.apply(dataJsonObj,key);
+            return Option.of(get(dataJsonObj,key));
         }
         
     

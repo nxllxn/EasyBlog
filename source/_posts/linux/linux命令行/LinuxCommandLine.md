@@ -197,7 +197,7 @@ tags:
     * 得到shell内部命令的帮助文档
         
         icekredit@IceKredit ~ $ help cd
-        cd: cd [-L|[-P [-e]] [-@]] [dir]
+        cd: cd \[-L|\[-P \[-e\]\] \[-@\]\] \[dir\]
             Change the shell working directory.
             
             Change the current directory to DIR.  The default DIR is the value of the
@@ -235,7 +235,7 @@ tags:
     * 显示程序手册 -- --help
     
         icekredit@IceKredit ~ $ mkdir --help
-        Usage: mkdir [OPTION]... DIRECTORY...
+        Usage: mkdir \[OPTION\]... DIRECTORY...
         Create the DIRECTORY(ies), if they do not already exist.
         
         Mandatory arguments to long options are mandatory for short options too.
