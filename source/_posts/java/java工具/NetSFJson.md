@@ -722,4 +722,3 @@ JSON（JavaScript Object Notation）,是一种被广泛使用的后端数据处�
         
         subJsonObjTwo.put("xxx","xxx");
         System.out.println(rootJsonObj);        //{"json":{"json":{"xxx":"xxx"}}}   ：)
-        
